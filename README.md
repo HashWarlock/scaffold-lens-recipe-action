@@ -1,5 +1,7 @@
 # 🏗 Recipe Open Action
-[![](https://cdn.discordapp.com/attachments/869412151033475176/1194615685201014856/hashwarlock_A_maltese_in_a_chef_outfit_whipping_something_toget_cad2a4d6-acea-43cc-8c94-27cd1f04566e.png?ex=65b0ff8e&is=659e8a8e&hm=35728f228181aa1bee0af029bdd19d9456337c58a465c4634a4204b8e1923f2d&)](https://youtu.be/MmQHZyEz_K4 "Recipe Open Action")
+![](./assets/chef-maltese.png)
+
+[Check out video on YouTube](https://youtu.be/MmQHZyEz_K4?si=Xw3noTmDg-PVNJlJ)
 ## Intro
 
 This project is a fork of [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2) that demonstrates how to build, debug, test, and deploy an [Open Action](https://docs.lens.xyz/docs/publication-actions-aka-open-actions) Module on Lens Protocol using [Hardhat](https://hardhat.org/).
