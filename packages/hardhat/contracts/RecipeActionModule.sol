@@ -104,7 +104,7 @@ contract RecipeActionModule is
     function initializePublicationAction(
         uint256 profileId,
         uint256 pubId,
-        address /* transactionExecutor */,
+        address transactionExecutor,
         bytes calldata data
     ) external override onlyHub returns (bytes memory) {
         (address tipReceiver, address cookBook, uint256 cookBookId, string memory recipeMetadata) = abi.decode(data, (address, address, uint256, string));
@@ -118,7 +118,7 @@ contract RecipeActionModule is
         }
         RMRKAbstractMultiAsset cookBookContract = RMRKAbstractMultiAsset(cookBook);
         address cookBookOwner = cookBookContract.ownerOf(cookBookId);
-        if (cookBookOwner != msg.sender) {
+        if (cookBookOwner != transactionExecutor) {
             revert ProfileCookBookMissing();
         }
         uint assetId = cookBookContract.addAssetEntry(recipeMetadata);
@@ -152,7 +152,7 @@ contract RecipeActionModule is
         }
         RMRKAbstractMultiAsset cookBookContract = RMRKAbstractMultiAsset(cookBook);
         address cookBookOwner = cookBookContract.ownerOf(cookBookId);
-        if (cookBookOwner != msg.sender) {
+        if (cookBookOwner != params.transactionExecutor) {
             revert ProfileCookBookMissing();
         }
 

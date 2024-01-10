@@ -58,7 +58,7 @@ const deployRecipeActionModuleContract: DeployFunction = async function (hre: Ha
 
   // This is the address of the LensHub contract on the network we're deploying to
   // When running locally, this should be the address of burner wallet used in the nextjs app
-  const lensHubAddress = process.env.LENS_HUB ?? "0x5de679113eA5fdC6a0239fBbBb8C476456dD4A1A";
+  const lensHubAddress = process.env.LENS_HUB ?? "0xEA470F0D79f3Bab7Bbe7568FacA57EA7e56660F9";
 
   // First check to see if there's a local mocked ModuleRegistry contract deployed
   // This allows us to run tests locally with the same flow as on-chain
@@ -95,7 +95,7 @@ const deployRecipeActionModuleContract: DeployFunction = async function (hre: Ha
   console.log("registered open action: tx=", registered.hash);
   const cookbook = await hre.ethers.getContract("CookBook", deployer);
   await cookbook.manageContributor(recipePublicationAction.address, true);
-  await cookbook.manageContributor("0x5de679113eA5fdC6a0239fBbBb8C476456dD4A1A", true);
+  await cookbook.manageContributor("0xEA470F0D79f3Bab7Bbe7568FacA57EA7e56660F9", true);
 };
 
 export default deployRecipeActionModuleContract;
