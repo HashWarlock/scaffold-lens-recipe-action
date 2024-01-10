@@ -4,6 +4,2298 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  31337: {
+    CookBook: {
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "collectionMetadata",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "maxSupply",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "royaltyRecipient",
+              type: "address",
+            },
+            {
+              internalType: "uint16",
+              name: "royaltyPercentageBps",
+              type: "uint16",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "ERC721AddressZeroIsNotaValidOwner",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721ApprovalToCurrentOwner",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721ApproveCallerIsNotOwnerNorApprovedForAll",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721ApproveToCaller",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721InvalidTokenId",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721MintToTheZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721NotApprovedOrOwner",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721TokenAlreadyMinted",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721TransferFromIncorrectOwner",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721TransferToNonReceiverImplementer",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ERC721TransferToTheZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "IndexOutOfBounds",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKApprovalForAssetsToCurrentOwner",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKApproveForAssetsCallerIsNotOwnerNorApprovedForAll",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKAssetAlreadyExists",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKBadPriorityListLength",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKIdZeroForbidden",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKIndexOutOfRange",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKMaxPendingAssetsReached",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKMintOverMax",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKMintZero",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKNewContributorIsZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKNewOwnerIsZeroAddress",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKNoAssetMatchingId",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKNotApprovedForAssetsOrOwner",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKNotOwner",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKNotOwnerOrContributor",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKRoyaltiesTooHigh",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKTokenDoesNotHaveAsset",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKUnexpectedAssetId",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "RMRKUnexpectedNumberOfAssets",
+          type: "error",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "approved",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Approval",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "ApprovalForAll",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "ApprovalForAllForAssets",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "approved",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ApprovalForAssets",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              indexed: true,
+              internalType: "uint64",
+              name: "assetId",
+              type: "uint64",
+            },
+            {
+              indexed: true,
+              internalType: "uint64",
+              name: "replacesId",
+              type: "uint64",
+            },
+          ],
+          name: "AssetAccepted",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256[]",
+              name: "tokenIds",
+              type: "uint256[]",
+            },
+            {
+              indexed: true,
+              internalType: "uint64",
+              name: "assetId",
+              type: "uint64",
+            },
+            {
+              indexed: true,
+              internalType: "uint64",
+              name: "replacesId",
+              type: "uint64",
+            },
+          ],
+          name: "AssetAddedToTokens",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "AssetPrioritySet",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              indexed: true,
+              internalType: "uint64",
+              name: "assetId",
+              type: "uint64",
+            },
+          ],
+          name: "AssetRejected",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "uint64",
+              name: "assetId",
+              type: "uint64",
+            },
+          ],
+          name: "AssetSet",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "contributor",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "bool",
+              name: "isContributor",
+              type: "bool",
+            },
+          ],
+          name: "ContributorUpdate",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "previousOwner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "OwnershipTransferred",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Transfer",
+          type: "event",
+        },
+        {
+          inputs: [],
+          name: "RMRK_INTERFACE",
+          outputs: [
+            {
+              internalType: "bytes4",
+              name: "rmrkInterface",
+              type: "bytes4",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "VERSION",
+          outputs: [
+            {
+              internalType: "string",
+              name: "version",
+              type: "string",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+            {
+              internalType: "uint64",
+              name: "assetId",
+              type: "uint64",
+            },
+          ],
+          name: "acceptAsset",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "metadataURI",
+              type: "string",
+            },
+          ],
+          name: "addAssetEntry",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "assetId",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint64",
+              name: "assetId",
+              type: "uint64",
+            },
+            {
+              internalType: "uint64",
+              name: "replacesAssetWithId",
+              type: "uint64",
+            },
+          ],
+          name: "addAssetToToken",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "approve",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "approveForAssets",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "balanceOf",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "balance",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "burn",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "contractURI",
+          outputs: [
+            {
+              internalType: "string",
+              name: "contractURI_",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getActiveAssetPriorities",
+          outputs: [
+            {
+              internalType: "uint64[]",
+              name: "priorities",
+              type: "uint64[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getActiveAssets",
+          outputs: [
+            {
+              internalType: "uint64[]",
+              name: "assetIds",
+              type: "uint64[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getApproved",
+          outputs: [
+            {
+              internalType: "address",
+              name: "approved",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getApprovedForAssets",
+          outputs: [
+            {
+              internalType: "address",
+              name: "approved",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint64",
+              name: "assetId",
+              type: "uint64",
+            },
+          ],
+          name: "getAssetMetadata",
+          outputs: [
+            {
+              internalType: "string",
+              name: "metadata",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint64",
+              name: "newAssetId",
+              type: "uint64",
+            },
+          ],
+          name: "getAssetReplacements",
+          outputs: [
+            {
+              internalType: "uint64",
+              name: "replacesAssetId",
+              type: "uint64",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getPendingAssets",
+          outputs: [
+            {
+              internalType: "uint64[]",
+              name: "assetIds",
+              type: "uint64[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getRoyaltyPercentage",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "royaltyPercentageBps",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getRoyaltyRecipient",
+          outputs: [
+            {
+              internalType: "address",
+              name: "recipient",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+          ],
+          name: "isApprovedForAll",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "isApproved",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+          ],
+          name: "isApprovedForAllForAssets",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "isApproved",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "contributor",
+              type: "address",
+            },
+          ],
+          name: "isContributor",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "isContributor_",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "contributor",
+              type: "address",
+            },
+            {
+              internalType: "bool",
+              name: "grantRole",
+              type: "bool",
+            },
+          ],
+          name: "manageContributor",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "maxSupply",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "maxSupply_",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "numToMint",
+              type: "uint256",
+            },
+            {
+              internalType: "string",
+              name: "tokenURI",
+              type: "string",
+            },
+          ],
+          name: "mint",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "firstTokenId",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [
+            {
+              internalType: "string",
+              name: "name_",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "owner_",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ownerOf",
+          outputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "maxRejections",
+              type: "uint256",
+            },
+          ],
+          name: "rejectAllAssets",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+            {
+              internalType: "uint64",
+              name: "assetId",
+              type: "uint64",
+            },
+          ],
+          name: "rejectAsset",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "renounceOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "salePrice",
+              type: "uint256",
+            },
+          ],
+          name: "royaltyInfo",
+          outputs: [
+            {
+              internalType: "address",
+              name: "receiver",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "royaltyAmount",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "bytes",
+              name: "data",
+              type: "bytes",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "setApprovalForAll",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "setApprovalForAllForAssets",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint64[]",
+              name: "priorities",
+              type: "uint64[]",
+            },
+          ],
+          name: "setPriority",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes4",
+              name: "interfaceId",
+              type: "bytes4",
+            },
+          ],
+          name: "supportsInterface",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "symbol",
+          outputs: [
+            {
+              internalType: "string",
+              name: "symbol_",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "tokenURI",
+          outputs: [
+            {
+              internalType: "string",
+              name: "tokenURI_",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalAssets",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "totalAssets_",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalSupply",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "totalSupply_",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "transferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "transferOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "newRoyaltyRecipient",
+              type: "address",
+            },
+          ],
+          name: "updateRoyaltyRecipient",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {
+        RMRK_INTERFACE: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        VERSION: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        acceptAsset: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        addAssetEntry: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        addAssetToToken: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        approve: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        approveForAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        balanceOf: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        burn: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        contractURI: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getActiveAssetPriorities:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getActiveAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getApproved: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getApprovedForAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getAssetMetadata: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getAssetReplacements: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getPendingAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getRoyaltyPercentage: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getRoyaltyRecipient: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        isApprovedForAll: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        isApprovedForAllForAssets:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        isContributor: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        manageContributor: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        maxSupply: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        mint: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        name: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        owner: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        ownerOf: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        rejectAllAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        rejectAsset: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        renounceOwnership: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        royaltyInfo: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        safeTransferFrom: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        setApprovalForAll: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        setApprovalForAllForAssets:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        setPriority: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        supportsInterface: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        symbol: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        tokenURI: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        totalAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        totalSupply: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        transferFrom: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        transferOwnership: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        updateRoyaltyRecipient: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+      },
+    },
+    MockModuleRegistry: {
+      address: "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "moduleAddress",
+              type: "address",
+            },
+          ],
+          name: "emitModuleMetadataRefresh",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "moduleAddress",
+              type: "address",
+            },
+          ],
+          name: "getModuleTypes",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "currencyAddress",
+              type: "address",
+            },
+          ],
+          name: "isErc20CurrencyRegistered",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "moduleAddress",
+              type: "address",
+            },
+          ],
+          name: "isModuleRegistered",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "moduleAddress",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "moduleType",
+              type: "uint256",
+            },
+          ],
+          name: "isModuleRegisteredAs",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "currencyAddress",
+              type: "address",
+            },
+          ],
+          name: "registerErc20Currency",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "moduleAddress",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "moduleType",
+              type: "uint256",
+            },
+          ],
+          name: "registerModule",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "currencyAddress",
+              type: "address",
+            },
+          ],
+          name: "verifyErc20Currency",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "moduleAddress",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "moduleType",
+              type: "uint256",
+            },
+          ],
+          name: "verifyModule",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {
+        emitModuleMetadataRefresh: "contracts/interfaces/IModuleRegistry.sol",
+        getModuleTypes: "contracts/interfaces/IModuleRegistry.sol",
+        isErc20CurrencyRegistered: "contracts/interfaces/IModuleRegistry.sol",
+        isModuleRegistered: "contracts/interfaces/IModuleRegistry.sol",
+        isModuleRegisteredAs: "contracts/interfaces/IModuleRegistry.sol",
+        registerErc20Currency: "contracts/interfaces/IModuleRegistry.sol",
+        registerModule: "contracts/interfaces/IModuleRegistry.sol",
+        verifyErc20Currency: "contracts/interfaces/IModuleRegistry.sol",
+        verifyModule: "contracts/interfaces/IModuleRegistry.sol",
+      },
+    },
+    RecipeActionModule: {
+      address: "0xDc64a140Aa3E981100a9becA4E685f962f0cF6C9",
+      abi: [
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "hub",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "moduleRegistry",
+              type: "address",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "CookBookNotProvided",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "CurrencyNotWhitelisted",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "NotHub",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "ProfileCookBookMissing",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "TipAmountCannotBeZero",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "TipAmountNotApproved",
+          type: "error",
+        },
+        {
+          inputs: [],
+          name: "TipReceiverNotProvided",
+          type: "error",
+        },
+        {
+          anonymous: false,
+          inputs: [],
+          name: "ModuleRegistered",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "previousOwner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "OwnershipTransferred",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "transactionExecutor",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "cookBook",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "cookBookId",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint64",
+              name: "assetId",
+              type: "uint64",
+            },
+          ],
+          name: "RecipeAddedCookBook",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "profileId",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "pubId",
+              type: "uint256",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "tipReceiver",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "cookBook",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "cookBookId",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "recipeMetadata",
+              type: "string",
+            },
+          ],
+          name: "RecipeRegistered",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "transactionExecutor",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "tipReceiver",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "currency",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "tipAmount",
+              type: "uint256",
+            },
+          ],
+          name: "TipCreated",
+          type: "event",
+        },
+        {
+          inputs: [],
+          name: "HUB",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "MODULE_REGISTRY",
+          outputs: [
+            {
+              internalType: "contract IModuleRegistry",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getModuleMetadataURI",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "profileId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "pubId",
+              type: "uint256",
+            },
+          ],
+          name: "getTipReceiver",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "profileId",
+              type: "uint256",
+            },
+            {
+              internalType: "uint256",
+              name: "pubId",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+            {
+              internalType: "bytes",
+              name: "data",
+              type: "bytes",
+            },
+          ],
+          name: "initializePublicationAction",
+          outputs: [
+            {
+              internalType: "bytes",
+              name: "",
+              type: "bytes",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "isRegistered",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "metadataURI",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              components: [
+                {
+                  internalType: "uint256",
+                  name: "publicationActedProfileId",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "publicationActedId",
+                  type: "uint256",
+                },
+                {
+                  internalType: "uint256",
+                  name: "actorProfileId",
+                  type: "uint256",
+                },
+                {
+                  internalType: "address",
+                  name: "actorProfileOwner",
+                  type: "address",
+                },
+                {
+                  internalType: "address",
+                  name: "transactionExecutor",
+                  type: "address",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "referrerProfileIds",
+                  type: "uint256[]",
+                },
+                {
+                  internalType: "uint256[]",
+                  name: "referrerPubIds",
+                  type: "uint256[]",
+                },
+                {
+                  internalType: "enum Types.PublicationType[]",
+                  name: "referrerPubTypes",
+                  type: "uint8[]",
+                },
+                {
+                  internalType: "bytes",
+                  name: "actionModuleData",
+                  type: "bytes",
+                },
+              ],
+              internalType: "struct Types.ProcessActionParams",
+              name: "params",
+              type: "tuple",
+            },
+          ],
+          name: "processPublicationAction",
+          outputs: [
+            {
+              internalType: "bytes",
+              name: "",
+              type: "bytes",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "registerModule",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "renounceOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_metadataURI",
+              type: "string",
+            },
+          ],
+          name: "setModuleMetadataURI",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes4",
+              name: "interfaceID",
+              type: "bytes4",
+            },
+          ],
+          name: "supportsInterface",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "transferOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {
+        initializePublicationAction: "contracts/interfaces/IPublicationActionModule.sol",
+        processPublicationAction: "contracts/interfaces/IPublicationActionModule.sol",
+        owner: "contracts/base/LensModuleRegistrant.sol",
+        renounceOwnership: "contracts/base/LensModuleRegistrant.sol",
+        transferOwnership: "contracts/base/LensModuleRegistrant.sol",
+        HUB: "contracts/base/HubRestricted.sol",
+        getModuleMetadataURI: "contracts/base/LensModuleMetadata.sol",
+        metadataURI: "contracts/base/LensModuleMetadata.sol",
+        setModuleMetadataURI: "contracts/base/LensModuleMetadata.sol",
+        supportsInterface: "contracts/base/LensModuleMetadata.sol",
+        MODULE_REGISTRY: "contracts/base/LensModuleRegistrant.sol",
+        isRegistered: "contracts/base/LensModuleRegistrant.sol",
+        registerModule: "contracts/base/LensModuleRegistrant.sol",
+      },
+    },
+    TestToken: {
+      address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+      abi: [
+        {
+          inputs: [],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "spender",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "value",
+              type: "uint256",
+            },
+          ],
+          name: "Approval",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "value",
+              type: "uint256",
+            },
+          ],
+          name: "Transfer",
+          type: "event",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "spender",
+              type: "address",
+            },
+          ],
+          name: "allowance",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "spender",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+          ],
+          name: "approve",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "balanceOf",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "decimals",
+          outputs: [
+            {
+              internalType: "uint8",
+              name: "",
+              type: "uint8",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "spender",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "subtractedValue",
+              type: "uint256",
+            },
+          ],
+          name: "decreaseAllowance",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "spender",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "addedValue",
+              type: "uint256",
+            },
+          ],
+          name: "increaseAllowance",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+          ],
+          name: "mint",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "symbol",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalSupply",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+          ],
+          name: "transfer",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "amount",
+              type: "uint256",
+            },
+          ],
+          name: "transferFrom",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {
+        allowance: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        approve: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        balanceOf: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        decimals: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        decreaseAllowance: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        increaseAllowance: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        name: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        symbol: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        totalSupply: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        transfer: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        transferFrom: "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      },
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;

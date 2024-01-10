@@ -58,7 +58,7 @@ const deployRecipeActionModuleContract: DeployFunction = async function (hre: Ha
 
   // This is the address of the LensHub contract on the network we're deploying to
   // When running locally, this should be the address of burner wallet used in the nextjs app
-  const lensHubAddress = process.env.LENS_HUB;
+  const lensHubAddress = process.env.LENS_HUB ?? "0x5de679113eA5fdC6a0239fBbBb8C476456dD4A1A";
 
   // First check to see if there's a local mocked ModuleRegistry contract deployed
   // This allows us to run tests locally with the same flow as on-chain
@@ -74,14 +74,14 @@ const deployRecipeActionModuleContract: DeployFunction = async function (hre: Ha
   }
 
   // Deploy the RecipeActionModule.sol contract
-  await deploy("RecipeActionModule.sol", {
+  await deploy("RecipeActionModule", {
     from: deployer,
     args: [lensHubAddress, moduleRegistry],
     log: true,
     autoMine: true,
   });
 
-  const recipePublicationAction = await hre.ethers.getContract("RecipeActionModule.sol", deployer);
+  const recipePublicationAction = await hre.ethers.getContract("RecipeActionModule", deployer);
 
   // Upload the metadata to Arweave with Irys and set the URI on the contract
   const metadataURI = await uploadMetadata(metadata);
@@ -97,4 +97,4 @@ const deployRecipeActionModuleContract: DeployFunction = async function (hre: Ha
 
 export default deployRecipeActionModuleContract;
 
-deployRecipeActionModuleContract.tags = ["RecipeActionModule.sol"];
+deployRecipeActionModuleContract.tags = ["RecipeActionModule"];

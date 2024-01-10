@@ -105,7 +105,7 @@ Then navigate to http://localhost:3000/debug to open the debugger. You can now c
     ```bash
     LENS_HUB=""
     ```
-2. Run the chain and deploy the `TipActionModule` and mock contracts to the local network, and start the app:
+2. Run the chain and deploy the `RecipeActionModule` and mock contracts to the local network, and start the app:
     ```shell
     yarn chain
     yarn deploy:local
@@ -113,8 +113,11 @@ Then navigate to http://localhost:3000/debug to open the debugger. You can now c
     ```
 3. Navigate to http://localhost:3000/debug.
 4. Select the `TestToken` contract and call the `mint` function to mint tokens for the burner wallet.
+   ![](./assets/TestToken.png)
 5. Copy the address of the `RecipeActionModule` and the `approve` spending from the `RecipeActionModule`.
+   ![](./assets/RecipeActionModule.png)
 6. Select the `CookBook` and have the burner wallet and another account mint a cookbook.
+   ![](./assets/RecipeOpenAction.png)
 7. Copy address of the `RecipeActionModule` contract and `manageContributor(address, true)` for CookBook
 8. Select the `RecipeActionModule` contract and call the `initializePublicationAction` function with a receiver address, cookbook contract address, cookbook NFT id for owner of recipe, and recipe metadata string.
 9. Call the `processPublicationAction` with the tip data, cookbook address, and cookbook id of the sender.

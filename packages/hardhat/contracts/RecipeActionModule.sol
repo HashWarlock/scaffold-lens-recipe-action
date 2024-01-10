@@ -35,8 +35,8 @@ contract RecipeActionModule is
     error TipAmountNotApproved();
 
     event RecipeRegistered(
-        uint256 indexed profileId,
-        uint256 indexed pubId,
+        uint256 profileId,
+        uint256 pubId,
         address indexed tipReceiver,
         address indexed cookBook,
         uint256 cookBookId,
