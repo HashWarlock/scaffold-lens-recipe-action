@@ -134,6 +134,10 @@ Then navigate to http://localhost:3000/debug to open the debugger. You can now c
    ![](./assets/RecipeActionModule.png)
    ![](./assets/approve-openaction-spend.png)
 6. Select the `CookBook` and have the burner wallet and another account mint a cookbook.
+   > **masters-cookbook URI**: `ipfs://QmWcoQ7MvDRVCBZ2Xii3TtNYThdoibztG1gkutDHyS6KQk/masters-cookbook.json`
+   > 
+   > **alices-cookbook URI**: `ipfs://QmWcoQ7MvDRVCBZ2Xii3TtNYThdoibztG1gkutDHyS6KQk/alices-cookbook.json`
+
    ![](./assets/RecipeOpenAction.png)
    ![](./assets/mint-cookbook-publisher.png)
    ![](./assets/mint-cookbook-recipe-collector.png)
