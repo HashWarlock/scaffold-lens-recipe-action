@@ -1,16 +1,18 @@
-# 🏗 ~~Scaffold-ETH 2~~ Scaffold-Lens
+# 🏗 Recipe Open Action
 
 This project is a fork of [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2) that demonstrates how to build, debug, test, and deploy an [Open Action](https://docs.lens.xyz/docs/publication-actions-aka-open-actions) Module on Lens Protocol using [Hardhat](https://hardhat.org/).
 
 Features:
 - ✅ Run a local EVM chain and test contracts locally with Hardhat
+- ✅ Deploy a CookBook RMRKMultiAsset NFT contract used to mint cookbooks
 - ✅ Deploy a mock ModuleRegistry contract
-- ✅ Deploy an ERC20 token contract used for whitelisted tips
+- ✅ Deploy an ERC20 token contract used for whitelisted tips to recipe creators
 - ✅ Deploy an Open Action Module contract
 - ✅ Debug local contract calls with a graphical interface
 - ✅ Verify contracts on Etherscan
 
-## Using the TipActionModule Contract
+## Using the RecipeActionModule Contract
+> This is based off of the `TipActionModule` work done for Scaffold Lens
 
 To use the live `TipActionModule` deployed by [Orna](https://orna.art), you can find the contract address and ABI from the dedicated repo: 
 
@@ -47,8 +49,8 @@ To get started with Scaffold-Lens, follow the steps below:
 1. **Install**  
    Clone this repo & install dependencies
     ```shell
-    git clone https://github.com/iPaulPro/scaffold-lens
-    cd scaffold-lens
+    git clone https://github.com/HashWarlock/scaffold-lens-recipe-action
+    cd scaffold-lens-recipe-action
     yarn install
     ```
 
@@ -111,9 +113,11 @@ Then navigate to http://localhost:3000/debug to open the debugger. You can now c
     ```
 3. Navigate to http://localhost:3000/debug.
 4. Select the `TestToken` contract and call the `mint` function to mint tokens for the burner wallet.
-5. Copy the address of the `TipActionModule` and the `approve` spending from the `TipActionModule`.
-6. Select the `TipActionModule` contract and call the `initializePublicationAction` function with a receiver address.
-7. Call the `processPublicationAction` with the tip data. 
+5. Copy the address of the `RecipeActionModule` and the `approve` spending from the `RecipeActionModule`.
+6. Select the `CookBook` and have the burner wallet and another account mint a cookbook.
+7. Copy address of the `RecipeActionModule` contract and `manageContributor(address, true)` for CookBook
+8. Select the `RecipeActionModule` contract and call the `initializePublicationAction` function with a receiver address, cookbook contract address, cookbook NFT id for owner of recipe, and recipe metadata string.
+9. Call the `processPublicationAction` with the tip data, cookbook address, and cookbook id of the sender.
 
 **Tip:** Use https://abi.hashex.org/ to encode the calldata for the `initializePublicationAction` and `processPublicationAction` functions.
 

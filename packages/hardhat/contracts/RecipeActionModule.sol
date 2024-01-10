@@ -11,12 +11,13 @@ import {HubRestricted} from "./base/HubRestricted.sol";
 import {IModuleRegistry} from "./interfaces/IModuleRegistry.sol";
 import {LensModuleMetadata} from "./base/LensModuleMetadata.sol";
 import {LensModuleRegistrant} from "./base/LensModuleRegistrant.sol";
+import "@rmrk-team/evm-contracts/contracts/implementations/abstract/RMRKAbstractMultiAsset.sol";
 
 /**
- * @title TipActionModule
+ * @title RecipeActionModule.sol
  * @dev Open Action Module for tipping Lens publications.
  */
-contract TipActionModule is
+contract RecipeActionModule is
     IPublicationActionModule,
     Ownable,
     HubRestricted,
@@ -26,15 +27,20 @@ contract TipActionModule is
 {
     using SafeERC20 for IERC20;
 
+    error ProfileCookBookMissing();
+    error CookBookNotProvided();
     error CurrencyNotWhitelisted();
     error TipAmountCannotBeZero();
     error TipReceiverNotProvided();
     error TipAmountNotApproved();
 
-    event TipReceiverRegistered(
+    event RecipeRegistered(
         uint256 indexed profileId,
         uint256 indexed pubId,
-        address indexed tipReceiver
+        address indexed tipReceiver,
+        address indexed cookBook,
+        uint256 cookBookId,
+        string recipeMetadata
     );
 
     event TipCreated(
@@ -44,14 +50,23 @@ contract TipActionModule is
         uint256 tipAmount
     );
 
+    event RecipeAddedCookBook(
+        address indexed transactionExecutor,
+        address indexed cookBook,
+        uint256 cookBookId,
+        uint64 assetId
+    );
+
     /**
      * @dev Mapping of tip receivers for publications.
      */
     mapping(uint256 profileId => mapping(uint256 pubId => address tipReceiver))
         internal _tipReceivers;
+    mapping(uint256 profileId => mapping(uint256 pubId => uint64 assetId))
+    internal _recipeAssetIds;
 
     /**
-     * @dev Initializes the TipActionModule contract.
+     * @dev Initializes the RecipeActionModule.sol contract.
      * @param hub Address of the LensHub contract.
      * @param moduleRegistry Address of the ModuleRegistry contract.
      */
@@ -92,15 +107,26 @@ contract TipActionModule is
         address /* transactionExecutor */,
         bytes calldata data
     ) external override onlyHub returns (bytes memory) {
-        address tipReceiver = abi.decode(data, (address));
+        (address tipReceiver, address cookBook, uint256 cookBookId, string memory recipeMetadata) = abi.decode(data, (address, address, uint256, string));
 
         if (tipReceiver == address(0)) {
             revert TipReceiverNotProvided();
         }
 
+        if (cookBook == address(0)) {
+            revert CookBookNotProvided();
+        }
+        RMRKAbstractMultiAsset cookBookContract = RMRKAbstractMultiAsset(cookBook);
+        address cookBookOwner = cookBookContract.ownerOf(cookBookId);
+        if (cookBookOwner == msg.sender) {
+            revert ProfileCookBookMissing();
+        }
+        uint assetId = cookBookContract.addAssetEntry(recipeMetadata);
+        cookBookContract.addAssetToToken(cookBookId, uint64(assetId), 0);
         _tipReceivers[profileId][pubId] = tipReceiver;
+        _recipeAssetIds[profileId][pubId] = uint64(assetId);
 
-        emit TipReceiverRegistered(profileId, pubId, tipReceiver);
+        emit RecipeRegistered(profileId, pubId, tipReceiver, cookBook, cookBookId, recipeMetadata);
 
         return data;
     }
@@ -108,9 +134,9 @@ contract TipActionModule is
     function processPublicationAction(
         Types.ProcessActionParams calldata params
     ) external override onlyHub nonReentrant returns (bytes memory) {
-        (address currency, uint256 tipAmount) = abi.decode(
+        (address currency, uint256 tipAmount, address cookBook, uint256 cookBookId) = abi.decode(
             params.actionModuleData,
-            (address, uint256)
+            (address, uint256, address, uint256)
         );
 
         if (!MODULE_REGISTRY.isErc20CurrencyRegistered(currency)) {
@@ -121,7 +147,20 @@ contract TipActionModule is
             revert TipAmountCannotBeZero();
         }
 
+        if (cookBook == address(0)) {
+            revert CookBookNotProvided();
+        }
+        RMRKAbstractMultiAsset cookBookContract = RMRKAbstractMultiAsset(cookBook);
+        address cookBookOwner = cookBookContract.ownerOf(cookBookId);
+        if (cookBookOwner == msg.sender) {
+            revert ProfileCookBookMissing();
+        }
+
         address tipReceiver = _tipReceivers[params.publicationActedProfileId][
+            params.publicationActedId
+        ];
+
+        uint64 assetId = _recipeAssetIds[params.publicationActedProfileId][
             params.publicationActedId
         ];
 
@@ -142,6 +181,14 @@ contract TipActionModule is
             currency,
             tipAmount
         );
+        emit RecipeAddedCookBook(
+            params.transactionExecutor,
+            cookBook,
+            cookBookId,
+            assetId
+        );
+
+        cookBookContract.addAssetToToken(cookBookId, assetId, 0);
 
         token.safeTransferFrom(
             params.transactionExecutor,
