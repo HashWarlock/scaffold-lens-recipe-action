@@ -118,7 +118,7 @@ contract RecipeActionModule is
         }
         RMRKAbstractMultiAsset cookBookContract = RMRKAbstractMultiAsset(cookBook);
         address cookBookOwner = cookBookContract.ownerOf(cookBookId);
-        if (cookBookOwner == msg.sender) {
+        if (cookBookOwner != msg.sender) {
             revert ProfileCookBookMissing();
         }
         uint assetId = cookBookContract.addAssetEntry(recipeMetadata);
@@ -152,7 +152,7 @@ contract RecipeActionModule is
         }
         RMRKAbstractMultiAsset cookBookContract = RMRKAbstractMultiAsset(cookBook);
         address cookBookOwner = cookBookContract.ownerOf(cookBookId);
-        if (cookBookOwner == msg.sender) {
+        if (cookBookOwner != msg.sender) {
             revert ProfileCookBookMissing();
         }
 

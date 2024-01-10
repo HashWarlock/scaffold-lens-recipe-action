@@ -129,13 +129,42 @@ Then navigate to http://localhost:3000/debug to open the debugger. You can now c
 3. Navigate to http://localhost:3000/debug.
 4. Select the `TestToken` contract and call the `mint` function to mint tokens for the burner wallet.
    ![](./assets/TestToken.png)
+   ![](./assets/mint-token-to-sender.png)
 5. Copy the address of the `RecipeActionModule` and the `approve` spending from the `RecipeActionModule`.
    ![](./assets/RecipeActionModule.png)
+   ![](./assets/approve-openaction-spend.png)
 6. Select the `CookBook` and have the burner wallet and another account mint a cookbook.
    ![](./assets/RecipeOpenAction.png)
-7. Copy address of the `RecipeActionModule` contract and `manageContributor(address, true)` for CookBook
-8. Select the `RecipeActionModule` contract and call the `initializePublicationAction` function with a receiver address, cookbook contract address, cookbook NFT id for owner of recipe, and recipe metadata string.
-9. Call the `processPublicationAction` with the tip data, cookbook address, and cookbook id of the sender.
+   ![](./assets/mint-cookbook-publisher.png)
+   ![](./assets/mint-cookbook-recipe-collector.png)
+7. Select the `RecipeActionModule` contract and call the `initializePublicationAction` function with a receiver address, cookbook contract address, cookbook NFT id for owner of recipe, and recipe metadata string.
+
+   #### recipe metadata
+   ```
+   {
+    "image": "ipfs://QmbMVTLrUb3CSW4Cytj8Nrv4VT72eGEcA57FpPtQgC2PRa/1-carbonara.jpg",
+    "mediaUri": "ipfs://QmbMVTLrUb3CSW4Cytj8Nrv4VT72eGEcA57FpPtQgC2PRa/1-carbonara.jpg",
+    "attributes":
+    [
+        {
+            "label": "Level",
+            "type": "string",
+            "value": "Easy",
+            "trait_type": "Level"
+        }
+    ],
+    "name": "Spaghetti Carbonara",
+    "description": "The recipe features creamy pasta with crisp bacon bits, grated Parmesan, and parsley, accompanied by clear, easy-to-follow instructions."
+   }
+   ```
+   ![](./assets/encoded-recipe-metdata.png)
+   ![](./assets/initialize-publication-action.png)
+   ![](./assets/blockexplorer.png)
+   ![](./assets/recipe-added-during-init.png)
+8. Call the `processPublicationAction` with the tip data, cookbook address, and cookbook id of the sender.
+   ![](./assets/params-data-process.png)
+   ![](./assets/process-action.png)
+   ![](./assets/asset-added-to-cookbook-after-process-action.png)
 
 **Tip:** Use https://abi.hashex.org/ to encode the calldata for the `initializePublicationAction` and `processPublicationAction` functions.
 

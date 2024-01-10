@@ -104,7 +104,10 @@ describe("RecipeActionModule.sol", function () {
       PROFILE_ID,
       PUBLICATION_ID,
       ownerAddress,
-      ethers.utils.defaultAbiCoder.encode(["address", "address", "uint256", "string"], [recipientAddress]),
+      ethers.utils.defaultAbiCoder.encode(
+        ["address", "address", "uint256", "string"],
+        [recipientAddress, cookBookContract.address, 1, recipeMetadata],
+      ),
     );
 
     // Deploy a new mock ERC20 token contract

@@ -93,6 +93,9 @@ const deployRecipeActionModuleContract: DeployFunction = async function (hre: Ha
   // Register the module with the ModuleRegistry
   const registered = await recipePublicationAction.registerModule();
   console.log("registered open action: tx=", registered.hash);
+  const cookbook = await hre.ethers.getContract("CookBook", deployer);
+  await cookbook.manageContributor(recipePublicationAction.address, true);
+  await cookbook.manageContributor("0x5de679113eA5fdC6a0239fBbBb8C476456dD4A1A", true);
 };
 
 export default deployRecipeActionModuleContract;
