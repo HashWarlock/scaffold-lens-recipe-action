@@ -1,5 +1,7 @@
 # 🏗 Recipe Open Action
 
+## Intro
+
 This project is a fork of [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2) that demonstrates how to build, debug, test, and deploy an [Open Action](https://docs.lens.xyz/docs/publication-actions-aka-open-actions) Module on Lens Protocol using [Hardhat](https://hardhat.org/).
 
 Features:
@@ -10,6 +12,19 @@ Features:
 - ✅ Deploy an Open Action Module contract
 - ✅ Debug local contract calls with a graphical interface
 - ✅ Verify contracts on Etherscan
+
+## Idea
+Tipping based on posts is a basic idea that is referenced as an [example](https://docs.lens.xyz/docs/creating-a-publication-action) in the Lensv2 documentation. If a user can tip a publication then we can combine the legacy NFT minting experience of the [Collect module](https://docs.lens.xyz/docs/collect-legacy). Instead of repeating the limited NFT experience of collect, there is an option to use [RMRK NFT](https://evm.rmrk.app) standard to create a fun experience through Web3 Social.
+
+### Expected User Journey
+- Mint a Cook Book NFT from the CookBook.sol contract
+- Make a publication to lens of a brand-new recipe to be added to the publisher's cookbook with params of:
+  - tip recipient address 
+  - cookbook contract address
+  - cookbook nft id
+  - recipe metadata for the new asset to be added to the cookbook NFT's active assets
+- Lens users can see recipes on their feed
+  - Users can pay a minimal fee to add the recipe to their personal cookbooks
 
 ## Using the RecipeActionModule Contract
 > This is based off of the `TipActionModule` work done for Scaffold Lens
