@@ -2,6 +2,8 @@
 ![](./assets/chef-maltese.png)
 
 [Check out video on YouTube](https://youtu.be/MmQHZyEz_K4?si=Xw3noTmDg-PVNJlJ)
+![](./assets/RecipeOpenActionUI.png)
+
 ## Intro
 
 This project is a fork of [Scaffold-ETH 2](https://github.com/scaffold-eth/scaffold-eth-2) that demonstrates how to build, debug, test, and deploy an [Open Action](https://docs.lens.xyz/docs/publication-actions-aka-open-actions) Module on Lens Protocol using [Hardhat](https://hardhat.org/).

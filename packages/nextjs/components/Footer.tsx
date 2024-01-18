@@ -53,10 +53,14 @@ export const Footer = () => {
             <span>·</span>
             <div className="flex justify-center items-center gap-1">
               <p className="m-0 text-center">
-                Built with <HeartIcon className="inline-block h-4 w-4" /> by
+                Built on the shoulders of
               </p>
               <a href="https://paulburke.co/" target="_blank" rel="noreferrer">
                 <span className="link">Paul Burke</span>
+              </a>
+              <p className="m-0 text-center"> by </p>
+              <a href="https://hashwarlock.dev/" target="_blank" rel="noreferrer">
+                <span className="link">hashwarlock</span>
               </a>
             </div>
           </div>

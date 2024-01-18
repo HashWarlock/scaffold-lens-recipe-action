@@ -1271,53 +1271,91 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {
-        RMRK_INTERFACE: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        VERSION: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        acceptAsset: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        addAssetEntry: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        addAssetToToken: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        approve: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        approveForAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        balanceOf: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        RMRK_INTERFACE:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        VERSION:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        acceptAsset:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        addAssetEntry:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        addAssetToToken:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        approve:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        approveForAssets:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        balanceOf:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
         burn: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        contractURI: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        contractURI:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
         getActiveAssetPriorities:
           "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        getActiveAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        getApproved: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        getApprovedForAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        getAssetMetadata: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        getAssetReplacements: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        getPendingAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        getRoyaltyPercentage: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        getRoyaltyRecipient: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        isApprovedForAll: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getActiveAssets:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getApproved:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getApprovedForAssets:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getAssetMetadata:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getAssetReplacements:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getPendingAssets:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getRoyaltyPercentage:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        getRoyaltyRecipient:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        isApprovedForAll:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
         isApprovedForAllForAssets:
           "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        isContributor: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        manageContributor: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        maxSupply: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        isContributor:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        manageContributor:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        maxSupply:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
         mint: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
         name: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        owner: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        ownerOf: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        rejectAllAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        rejectAsset: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        renounceOwnership: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        royaltyInfo: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        safeTransferFrom: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        setApprovalForAll: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        owner:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        ownerOf:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        rejectAllAssets:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        rejectAsset:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        renounceOwnership:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        royaltyInfo:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        safeTransferFrom:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        setApprovalForAll:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
         setApprovalForAllForAssets:
           "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        setPriority: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        supportsInterface: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        symbol: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        tokenURI: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        totalAssets: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        totalSupply: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        transferFrom: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        transferOwnership: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
-        updateRoyaltyRecipient: "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        setPriority:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        supportsInterface:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        symbol:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        tokenURI:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        totalAssets:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        totalSupply:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        transferFrom:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        transferOwnership:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
+        updateRoyaltyRecipient:
+          "@rmrk-team/evm-contracts/contracts/implementations/premint/RMRKMultiAssetPreMint.sol",
       },
     },
     MockModuleRegistry: {
@@ -1969,8 +2007,10 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {
-        initializePublicationAction: "contracts/interfaces/IPublicationActionModule.sol",
-        processPublicationAction: "contracts/interfaces/IPublicationActionModule.sol",
+        initializePublicationAction:
+          "contracts/interfaces/IPublicationActionModule.sol",
+        processPublicationAction:
+          "contracts/interfaces/IPublicationActionModule.sol",
         owner: "contracts/base/LensModuleRegistrant.sol",
         renounceOwnership: "contracts/base/LensModuleRegistrant.sol",
         transferOwnership: "contracts/base/LensModuleRegistrant.sol",
